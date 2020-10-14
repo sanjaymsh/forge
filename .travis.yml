@@ -66,12 +66,12 @@ before_install:
 script:
 - if [[ ( "$TRAVIS_OS_NAME" == "linux" ) && ( "$TRAVIS_BRANCH" == "$TRAVIS_TAG" )]];
   then
-    docker exec -t forge-pr bash -c "cd
+    docker exec -t -d forge-pr bash -c "cd
     /travis; CC=/usr/bin/$CC_NAME CXX=/usr/bin/$CXX_NAME cmake -DCMAKE_BUILD_TYPE:STRING=Release
     . && make -j2 install";
   elif [[ "$TRAVIS_OS_NAME" == "linux" ]];
   then
-    docker exec -t forge-pr bash -c "cd
+    docker exec -t -d forge-pr bash -c "cd
     /travis; CC=/usr/bin/$CC_NAME CXX=/usr/bin/$CXX_NAME cmake -DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo
     . && make -j2 install";
   fi
