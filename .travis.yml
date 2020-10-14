@@ -12,18 +12,46 @@ matrix:
   include:
   - os: linux
     env: CC_NAME=gcc-4.8 CXX_NAME=g++-4.8
+    arch: amd64 
   - os: linux
     env: CC_NAME=gcc-5 CXX_NAME=g++-5
+    arch: amd64 
   - os: linux
     env: CC_NAME=gcc CXX_NAME=g++
+    arch: amd64 
   - os: linux
     env: CC_NAME=clang-3.9 CXX_NAME=clang++-3.9
+    arch: amd64 
   - os: linux
     env: CC_NAME=clang-4.0 CXX_NAME=clang++-4.0
+    arch: amd64 
   - os: linux
     env: CC_NAME=clang-5.0 CXX_NAME=clang++-5.0
+    arch: amd64 
   - os: linux
     env: CC_NAME=clang-6.0 CXX_NAME=clang++-6.0
+    arch: amd64 
+  - os: linux
+    env: CC_NAME=gcc-4.8 CXX_NAME=g++-4.8
+    arch: ppc64le
+  - os: linux
+    env: CC_NAME=gcc-5 CXX_NAME=g++-5
+    arch: ppc64le
+  - os: linux
+    env: CC_NAME=gcc CXX_NAME=g++
+    arch: ppc64le
+  - os: linux
+    env: CC_NAME=clang-3.9 CXX_NAME=clang++-3.9
+    arch: ppc64le
+  - os: linux
+    env: CC_NAME=clang-4.0 CXX_NAME=clang++-4.0
+    arch: ppc64le
+  - os: linux
+    env: CC_NAME=clang-5.0 CXX_NAME=clang++-5.0
+    arch: ppc64le
+  - os: linux
+    env: CC_NAME=clang-6.0 CXX_NAME=clang++-6.0
+    arch: ppc64le
 
 before_install:
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]];
